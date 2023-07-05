@@ -102,7 +102,7 @@ $book = $dao->clickBook($_POST["book_id"]);
 
     function closeDialog() {
       var dialog = document.getElementById("dialog");
-      dialog.style.display = "none";
+      dialog.style.display = "none"
     }
 
     function closeDialog2() {
