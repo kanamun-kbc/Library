@@ -1,7 +1,7 @@
-body {
+/* body {
     margin: 0 auto;
     max-width: 1920px;
-}
+} */
 
 /*.main{
 padding: 1px;
@@ -37,7 +37,7 @@ left: 10%;
 bottom: 30px;
 }*/
 
-/*ヘッダー*/
+/* ヘッダー
 header {
     padding: 1px;
     background-color: #FADF6A;
@@ -65,14 +65,27 @@ li {
 .pc-nav {
     position: relative;
     top: 5px;
-}
+} */
 
-/*パンくず*/
-.breadcrumb {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    /*パンくず*/
+    .breadcrumb {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pan a {
+        color: #000000;
+        text-decoration: none;
+        position: relative;
+        top: -40px;
+        left: 15px
+    }
+
+    .breadcrumb li {
+        display: inline;
+        font-size: 25px;
+    }
 
 .pan a{
     color: #000000;
@@ -85,7 +98,7 @@ li {
 .breadcrumb li {
     display: inline;
     font-size: 25px;
-}
+} 
 
 /*image-container（借りてる本）*/
 .my-image-container {
@@ -189,7 +202,7 @@ li {
 }
 
 /*ログアウトボタン*/
-.logout-button {
+/* .logout-button {
     font-size: 20px;
     width: 150px;
     height: 100px;
@@ -200,7 +213,7 @@ li {
     background: #FADF6A;
     color: #000000;
     border-radius: 20px;
-}
+} */
 
 /*履歴ボタン*/
 .history-button {
@@ -213,7 +226,7 @@ li {
     color: #000000;
     border-radius: 60px;
     position: relative;
-    bottom: 120px;
+    bottom: 90px;
     right: 35px;
 }
 

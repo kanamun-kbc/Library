@@ -22,6 +22,29 @@
     align-items: center;
   }
   
+
+          /*パンくず*/
+          .breadcrumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            top: 30px;
+        }
+    
+        .pan a {
+            color: #000000;
+            text-decoration: none;
+            position: relative;
+            top: -40px;
+            left: 15px
+        }
+    
+        .breadcrumb li {
+            display: inline;
+            font-size: 25px;
+        }
+
   .pc-nav {
     text-align: right;
   }

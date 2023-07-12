@@ -6,7 +6,7 @@ require_once("../../../Test_DB/Book.php");
 
 session_start();
 if (!isset($_SESSION["user_id"])) {
-  header("Location: login.php");
+  header("Location: ../../Login.php");
   exit;
 }
 
@@ -27,18 +27,11 @@ $book = $dao->clickBook($_POST["book_id"]);
 <body>
   <div class="main">
     <!--ヘッダー-->
-    <div class="main">
-      <div id="contents"><a href="../Home/StudentHome.php">白石学園ポータルサイト</a>
-      </div>
-      <div id="login">
-        ログイン者:<?php echo $user->getUserName();  ?><br>
-        区分:<?php echo $user->getAffiliationName(); ?><br>
-        学科:<?php echo $user->getUserTypeName(); ?>
-      </div>
-    </div>
-  </div> <!--パンくずリスト-->
+    <?php include "../../../Test_DB/Header.php"; ?>
+  </div><br>
+  <!--パンくずリスト-->
   <ul class="breadcrumb">
-    <li><a href="../Home/StudentHome.php">ホーム</a></li>
+    <li class="pan"><a href="../Home/StudentHome.php">ホーム > その他ページ</a></li>
   </ul>
   <div class="books"> <!--本の詳細-->
     <img src="<?php echo '../../../image/' . $book["image"]; ?>" + class="example1" style="vertical-align:top">

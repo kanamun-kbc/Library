@@ -23,7 +23,7 @@
   color:#000000;
 }
 /*パンくずリストのスタイル*/
-.breadcrumb{
+/*.breadcrumb{
   list-style:none;
   padding: 0;
   margin: 0;
@@ -34,7 +34,32 @@
 .breadcrumb li:not(:last-child):after {
   content: "＞";
   margin: 0 5px;
-  }
+  }*/
+
+
+        /*パンくず*/
+        .breadcrumb {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          position: relative;
+          top: 30px;
+      }
+  
+      .pan a {
+          color: #000000;
+          text-decoration: none;
+          position: relative;
+          top: -40px;
+          left: 15px
+      }
+  
+      .breadcrumb li {
+          display: inline;
+          font-size: 25px;
+      }
+
+  
 
   /*本の固定*/
   .books{
@@ -67,7 +92,7 @@
     left: 450px; /* 左からの位置 */
     width: 350px; /* ボタンの幅 */
     height: 55px; /* ボタンの高さ */
-    background-color: #007bff; /* ボタンの背景色 */
+    background-color: #FADF6A; /* ボタンの背景色 */
     color: #fff; /* ボタンのテキスト色 */
     border: none; /* ボタンのボーダーをなしにする */
     border-radius: 10px; /* ボタンの角を丸める */
@@ -83,7 +108,7 @@
     left: 850px; /* 左からの位置 */
     width: 350px; /* ボタンの幅 */
     height: 55px; /* ボタンの高さ */
-    background-color: #007bff; /* ボタンの背景色 */
+    background-color: #FADF6A; /* ボタンの背景色 */
     color: #fff; /* ボタンのテキスト色 */
     border: none; /* ボタンのボーダーをなしにする */
     border-radius: 10px; /* ボタンの角を丸める */
@@ -128,6 +153,21 @@
     text-align: center; /* テキストを中央に配置する */
   }
 
+  #completeButton /*okボタン*/{
+    position: absolute;
+    top: 230px; /* 上からの位置 */
+    left: 600px; /* 左からの位置 */
+    width: 150px; /* ボタンの幅 */
+    height: 55px; /* ボタンの高さ */
+    background-color: greenyellow; /* ボタンの背景色 */
+    color: #fff; /* ボタンのテキスト色 */
+    border: none; /* ボタンのボーダーをなしにする */
+    border-radius: 10px; /* ボタンの角を丸める */
+    cursor: pointer; /* マウスカーソルをポインターにする */
+    margin-top: 20px; /* 上部の余白 */
+    margin-right: 10px; /* 右側の余白 */
+    font-size: 22px; /* テキストの大きさを変更する */
+  }
   .dialog2-content {
     background-color: #fff; /* コンテンツの背景色を白にする */
     margin: 15% auto; /* 上下に15%、左右にautoのマージンを設定して中央に配置する */
@@ -175,21 +215,7 @@
     margin-right: 10px; /* 右側の余白 */
     font-size: 22px; /* テキストの大きさを変更する */
   }
-  #okButton /*okボタン*/{
-    position: absolute;
-    top: 270px; /* 上からの位置 */
-    left: 500px; /* 左からの位置 */
-    width: 150px; /* ボタンの幅 */
-    height: 55px; /* ボタンの高さ */
-    background-color: greenyellow; /* ボタンの背景色 */
-    color: #fff; /* ボタンのテキスト色 */
-    border: none; /* ボタンのボーダーをなしにする */
-    border-radius: 10px; /* ボタンの角を丸める */
-    cursor: pointer; /* マウスカーソルをポインターにする */
-    margin-top: 20px; /* 上部の余白 */
-    margin-right: 10px; /* 右側の余白 */
-    font-size: 22px; /* テキストの大きさを変更する */
-  }
+
   
 
   

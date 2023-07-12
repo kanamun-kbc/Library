@@ -6,7 +6,7 @@ require_once("../../../Test_DB/User.php");
 session_start();
 
 if (!isset($_SESSION["user_id"])) {
-  header("Location: Login.php");
+  header("Location: ../../Login.php");
   exit;
 }
 
@@ -40,25 +40,18 @@ $history = $dao->getHistory($user->getUserId());
 </head>
 
 <body>
-  <header>
-    <div class="header-wrapper">
-      <h1>
-        <a href="../Home/StudentHome.php">図書館システム</a>
-      </h1>
-      <nav class="pc-nav">
-        <ul>
-          <li>ログイン者：<?php echo $user->getUserName(); ?></li>
-          <li>区分：<?php echo $user->getUserTypeName(); ?></li>
-          <li>学科：<?php echo $user->getAffiliationName() ?></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+
+  <!--ヘッダー-->
+  <?php include "../../../Test_DB/Header.php"; ?><br>
+  <!--パンくずリスト-->
+  <ul class="breadcrumb">
+    <li class="pan"><a href="../Home/StudentHome.php">ホーム > 貸出ページ</a></li>
+  </ul>
   <div class="header-divider"></div>
   <div class="main">
-    <p class="breadcrumbs">
-      <a href="../Home/StudentHome.php">ホーム</a> &gt; 履歴
-    </p>
+    <!--<p class="breadcrumbs">
+      <a href="../Home/Home.php">ホーム</a> &gt; 履歴
+    </p>-->
     <h2>貸出履歴</h2>
     <?php foreach ($history as $item) : ?>
       <div class="history-item">
