@@ -45,7 +45,7 @@ $history = $dao->getHistory($user->getUserId());
   <?php include "../../../Test_DB/Header.php"; ?><br>
   <!--パンくずリスト-->
   <ul class="breadcrumb">
-    <li class="pan"><a href="../Home/StudentHome.php">ホーム > 貸出ページ</a></li>
+    <li class="pan"><a href="../Home/StudentHome.php">ホーム > 履歴ページ</a></li>
   </ul>
   <div class="header-divider"></div>
   <div class="main">
