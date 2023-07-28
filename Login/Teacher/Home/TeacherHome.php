@@ -72,7 +72,9 @@ $lentBooks = $dao->getLentNowBooks($user);
     <div class="my-image-container"></div>
     <br>
     <!--履歴ボタン-->
-    <button id="history-button" class="history-button" onclick="window.location.href='../Add/Add.php'">追加</button><br>
+    <button id="history-button" class="history-button" onclick="window.location.href='../Add/Add.php'">追加</button>
+    <button id="history-button" class="history-button" onclick="window.location.href='../List/List.php'">滞納者一覧</button>
+    <br>
     <hr class="custom-hr"><!--横線-->
     <p class="showbook2">全ての本</p>
     <div class="all-image-container"></div>

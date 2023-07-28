@@ -270,14 +270,13 @@ class DAO
         return $result;
     }
 
-    //最後の行のbook_idを取得して1追加する関数
+    //最新のbook_idを取得して1を追加する関数
     public function getLastBookId()
     {
-        $sql = "SELECT book_id FROM book ORDER BY book_id DESC LIMIT 1";
+        $sql = "SELECT MAX(book_id) + 1 FROM book";
         $stmt = $this->conn->query($sql);
         $lastBookId = $stmt->fetchColumn();
-
-        return $lastBookId + 1;
+        return $lastBookId;
     }
 
     public function AddBook($book_id,$affiliation_id,$book_name,$author,$publisher,$image,$ISBN)

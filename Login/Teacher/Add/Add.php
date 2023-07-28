@@ -35,7 +35,7 @@ $affiliation_id = $user->getAffiliationId();
   </div><br>
   <!--パンくずリスト-->
   <ul class="breadcrumb">
-    <li class="pan"><a href="../Home/TeacherHome.php">ホーム > 詳細</a></li>
+    <li class="pan"><a href="../Home/TeacherHome.php">ホーム ></a><a href="Add.php">本の追加</a></li>
   </ul>
   <div class="books"> <!-- 本の詳細 -->
     <div class="books"> <!-- 本の詳細 -->
@@ -259,8 +259,18 @@ $affiliation_id = $user->getAffiliationId();
 
     function deleteOkDialog() {
       var dialog = document.getElementById("dialog4");
+      deleteinfo()
       closeDialog2();
       dialog.style.display = "block";
+    }
+
+    //情報を削除する関数
+    function deleteinfo() {
+      document.getElementById('fileInput').value = '';
+      document.getElementById('book_name').value = '';
+      document.getElementById('author').value = '';
+      document.getElementById('publisher').value = '';
+      document.getElementById('ISBN').value = '';
     }
 
     //ホームに戻る

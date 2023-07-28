@@ -401,3 +401,8 @@ h2 input[type="text"] {
   font-size: 22px;
   /* テキストの大きさを変更する */
 }
+
+.ISBN-button{
+  position: absolute;
+  bottom: 165px;
+}
