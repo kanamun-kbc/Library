@@ -174,15 +174,19 @@
 
   .AddButtonText{
     position: absolute;
-    top: 200px;
-    left: 500px;
-    font-size: 30px;
+    top: dialog;
+    left: dialog;
+    margin-top: -50px; 
+    margin-left: dialog;
+    white-space: nowrap;
+    font-size: 25px;
+    text-align: center; /* テキストを中央に配置する */
   }
 
   #completeButton /*okボタン*/{
     position: absolute;
-    top: 270px; /* 上からの位置 */
-    left: 580px; /* 左からの位置 */
+    top: dialog; /* 上からの位置 */
+    left: dialog; /* 左からの位置 */
     width: 150px; /* ボタンの幅 */
     height: 55px; /* ボタンの高さ */
     background-color: greenyellow; /* ボタンの背景色 */
@@ -190,8 +194,8 @@
     border: none; /* ボタンのボーダーをなしにする */
     border-radius: 10px; /* ボタンの角を丸める */
     cursor: pointer; /* マウスカーソルをポインターにする */
-    margin-top: 20px; /* 上部の余白 */
-    margin-right: 10px; /* 右側の余白 */
+    margin-top: 10px; /* 上部の余白 */
+    margin-left: -70px; /* 右側の余白 */
     font-size: 22px; /* テキストの大きさを変更する */
   }
 
@@ -213,8 +217,8 @@
   
   #yesButton /*はいボタン*/{
     position: absolute;
-    top: 270px; /* 上からの位置 */
-    left: 500px; /* 左からの位置 */
+    top: dialog; /* 上からの位置 */
+    left: dialog; /* 左からの位置 */
     width: 150px; /* ボタンの幅 */
     height: 55px; /* ボタンの高さ */
     background-color: greenyellow; /* ボタンの背景色 */
@@ -222,15 +226,15 @@
     border: none; /* ボタンのボーダーをなしにする */
     border-radius: 10px; /* ボタンの角を丸める */
     cursor: pointer; /* マウスカーソルをポインターにする */
-    margin-top: 20px; /* 上部の余白 */
-    margin-right: 10px; /* 右側の余白 */
+    margin-top: 15px; /* 上部の余白 */
+    margin-left: -170px; /* 右側の余白 */
     font-size: 22px; /* テキストの大きさを変更する */
   }
   
   #noButton /*いいえボタン*/{
     position: absolute;
-    top: 270px; /* 上からの位置 */
-    left: 700px; /* 左からの位置 */
+    top: dialog; /* 上からの位置 */
+    left: dialog; /* 左からの位置 */
     width: 150px; /* ボタンの幅 */
     height: 55px; /* ボタンの高さ */
     background-color: Red; /* ボタンの背景色 */
@@ -238,11 +242,10 @@
     border: none; /* ボタンのボーダーをなしにする */
     border-radius: 10px; /* ボタンの角を丸める */
     cursor: pointer; /* マウスカーソルをポインターにする */
-    margin-top: 20px; /* 上部の余白 */
-    margin-right: 10px; /* 右側の余白 */
+    margin-top: 15px; /* 上部の余白 */
+    margin-left: 20px; /* 右側の余白 */
     font-size: 22px; /* テキストの大きさを変更する */
   }
-
   
 
   
