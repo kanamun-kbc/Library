@@ -80,6 +80,21 @@ switch ($process) {
         echo exec($command, $output);
 
         break;
+
+    case 'add':
+         //book_idを受け取る
+         $book_id = filter_input(INPUT_POST, 'book_id');
+         $affiliation_id = filter_input(INPUT_POST, 'affiliation_id');
+         $book_name = filter_input(INPUT_POST, 'book_name');
+         $author = filter_input(INPUT_POST, 'author');
+         $publisher = filter_input(INPUT_POST, 'publisher');
+         $image = filter_input(INPUT_POST, 'image');
+         $ISBN = filter_input(INPUT_POST, 'ISBN');
+         // DAOクラスをインスタンス化
+         $dao = new DAO();
+         //削除を実行
+         echo $dao->AddBook($book_id,$affiliation_id,$book_name,$author,$publisher,$image,$ISBN);
+         break;
 }
 
 // このファイルの処理を終了する

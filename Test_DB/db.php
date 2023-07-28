@@ -177,7 +177,7 @@ class DAO
 
     //ISBNコードからbook_idを返す関数（実装中）
     public function searchISBN($ISBN)
-        //book_idの若い順に並べる（SQL8.0のみ有効）
+    //book_idの若い順に並べる（SQL8.0のみ有効）
     {
 
         //ISBNからROW_NUMBER_OVERを取ってくる
@@ -188,29 +188,29 @@ class DAO
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":ISBN", $ISBN);
         $stmt->execute();
-        
+
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $result = $result['num'];
 
-       
+
 
         return $result;
     }
-        
 
-        public function deleteProcess($book_id)
-    {   
+
+    public function deleteProcess($book_id)
+    {
         // lentテーブルから同じbook_idのものを削除（参照制約の関係）
         $sql = "DELETE FROM lent WHERE book_id = :book_id";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":book_id", $book_id);
         $stmt->execute();
-        
+
         // bookテーブルから同じbook_idのものを削除
         $sql = "DELETE FROM book WHERE book_id = :book_id";
-        
+
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":book_id", $book_id);
         $stmt->execute();
@@ -245,7 +245,7 @@ class DAO
 
         return $result;
     }
-    
+
     // 滞納者一覧を取得する関数
     public function getDelinquentUsers(): array
     {
@@ -269,5 +269,33 @@ class DAO
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-}
 
+    //最後の行のbook_idを取得して1追加する関数
+    public function getLastBookId()
+    {
+        $sql = "SELECT book_id FROM book ORDER BY book_id DESC LIMIT 1";
+        $stmt = $this->conn->query($sql);
+        $lastBookId = $stmt->fetchColumn();
+
+        return $lastBookId + 1;
+    }
+
+    public function AddBook($book_id,$affiliation_id,$book_name,$author,$publisher,$image,$ISBN)
+    {
+        $sql = "INSERT INTO book(book_id, affiliation_id, book_name, author, publisher, remarks, image , ISBN)
+        VALUES (:book_id, :affiliation_id, :book_name, :author, :publisher, :remarks, :image, :ISBN)";
+
+        // SQL実行準備
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(":book_id", $book_id);
+        $stmt->bindValue(":affiliation_id", $affiliation_id);
+        $stmt->bindValue(":book_name", $book_name);
+        $stmt->bindValue(":author", $author);
+        $stmt->bindValue(":publisher", $publisher);
+        $stmt->bindValue(":remarks", null, PDO::PARAM_NULL);
+        $stmt->bindValue(":image", $image);
+        $stmt->bindValue(":ISBN", $ISBN);
+        $stmt->execute();
+    }
+}

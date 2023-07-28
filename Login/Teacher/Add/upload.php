@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["uploadedFile"])) {
-    $targetDirectory = "img/"; // 画像を保存するパス
+    $targetDirectory = "../../../Image/"; // 画像を保存するパス
 
     // 新しいファイル名を取得
     $newFileName = $_FILES["uploadedFile"]["name"];
