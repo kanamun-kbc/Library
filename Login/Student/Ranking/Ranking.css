@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/*ヘッダーのスタイル*/
+.main{
+  padding: 1px;
+  background-color:#ff8c00;
+  margin:0;
+}
+
+#contents{
+  width:100%;
+  font-size:40px;
+  margin: 5px auto;
+  color:#000000;
+}
+
+#login{
+  position: absolute;
+  top: 2px; /* #contents内の上から何pxか */
+  left: 1120px; /* #contents内の左から何pxか */
+  width:100%;
+  font-size:15px;
+  margin: 10px auto;
+  color:#000000;
+}
+/*パンくずリストのスタイル*/
+.breadcrumb{
+  list-style:none;
+  padding: 0;
+  margin: 0;
+  }
+.breadcrumb li {
+  display: inline;
+  }
+.breadcrumb li:not(:last-child):after {
+  content: "＞";
+  margin: 0 5px;
+  }
+
+      /*パンくず*/
+      .breadcrumb {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        top: 30px;
+    }
+
+    .pan a {
+        color: #000000;
+        text-decoration: none;
+        position: relative;
+        top: -40px;
+        left: 15px
+    }
+
+    .breadcrumb li {
+        display: inline;
+        font-size: 25px;
+    }
+
+  /*本の固定*/
+  .books{
+    display: flex;
+  }
+  
+  /*文字の位置*/
+  .text{
+    margin-top:50px;
+    margin-left:50px;
+    padding: 0;
+  }
+
+  /*本の大きさ*/
+  .example1{
+    width: 120px;
+    height: 150px;
+    padding-left: 50px;
+    padding-top: 20px;
+  }
+  th{
+    border-collapse: collapse;
+    text-align: center;
+  }
+  table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+

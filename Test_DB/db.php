@@ -6,7 +6,7 @@ require_once("Book.php");
 class DAO
 {
     private $user = "root";
-    private $pwd = "Tg5Y64aBa4HSM";
+    private $pwd = "moku2440";
 
     private $dsn = "mysql:host=localhost;port=3306;dbname=library;";
     private $conn;
@@ -298,6 +298,19 @@ class DAO
         $stmt->execute();
     }
 
+    public function getTopBorrowedBooks()
+{
+    $sql = "SELECT b.book_id, b.book_name, COUNT(l.book_id) AS borrow_count, b.image
+            FROM book AS b
+            LEFT JOIN lent AS l ON b.book_id = l.book_id
+            GROUP BY b.book_id
+            ORDER BY borrow_count DESC
+            LIMIT 3";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
 
 
     public function ChangeBook($book_id, $book_name, $author, $publisher, $ISBN)
