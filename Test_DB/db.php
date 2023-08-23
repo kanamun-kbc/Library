@@ -279,7 +279,7 @@ class DAO
         return $lastBookId;
     }
 
-    public function AddBook($book_id,$affiliation_id,$book_name,$author,$publisher,$image,$ISBN)
+    public function AddBook($book_id, $affiliation_id, $book_name, $author, $publisher, $image, $ISBN)
     {
         $sql = "INSERT INTO book(book_id, affiliation_id, book_name, author, publisher, remarks, image , ISBN)
         VALUES (:book_id, :affiliation_id, :book_name, :author, :publisher, :remarks, :image, :ISBN)";
@@ -311,4 +311,23 @@ class DAO
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+
+    public function ChangeBook($book_id, $book_name, $author, $publisher, $ISBN)
+    {
+        $sql = "UPDATE book
+    SET  book_name = :book_name , author = :author , publisher = :publisher , ISBN = :ISBN WHERE book_id = :book_id";
+
+        // SQL実行準備
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(":book_id", $book_id);
+        $stmt->bindValue(":book_name", $book_name);
+        $stmt->bindValue(":author", $author);
+        $stmt->bindValue(":publisher", $publisher);
+        $stmt->bindValue(":ISBN", $ISBN);
+        $stmt->execute();
+    }
+
+
 }

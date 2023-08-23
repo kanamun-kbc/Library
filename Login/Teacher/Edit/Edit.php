@@ -42,19 +42,29 @@ $book = $dao->clickBook($_POST["book_id"]);
     <img src="<?php echo '../../../image/' . $book["image"]; ?>" + class="example1" style="vertical-align:top">
     <div class="text">
       <p>
-      <h2>著書名:<?php echo $book["book_name"]; ?></h2>
+      <h2>著書名:
+        <?php echo $book["book_name"]; ?>
+      </h2>
       </p>
       <p>
-      <h2>著者名 :<?php echo $book["author"]; ?></h2>
+      <h2>著者名 :
+        <?php echo $book["author"]; ?>
+      </h2>
       </p>
       <p>
-      <h2>出版社：<?php echo $book["publisher"]; ?></h2>
+      <h2>出版社：
+        <?php echo $book["publisher"]; ?>
+      </h2>
       <p>
       <p>
-      <h2>貸出状況： <?php echo $book["lending_status"]; ?></h2>
+      <h2>貸出状況：
+        <?php echo $book["lending_status"]; ?>
+      </h2>
       </p>
       <p>
-      <h2>ISBN： <?php echo $book["ISBN"]; ?></h2>
+      <h2>ISBN：
+        <?php echo $book["ISBN"]; ?>
+      </h2>
       </p>
     </div>
   </div> <!--貸出、戻るボタン-->
@@ -63,8 +73,8 @@ $book = $dao->clickBook($_POST["book_id"]);
     <button id="deleteButton" onclick="deleteDialog()">削除</button>
     <button id="returnButton" onclick="redirectToHome()">戻る</button>
   </div>
-<!--ダイアログボックスの表示-->
-<div id="dialog" class="dialog">
+  <!--ダイアログボックスの表示-->
+  <div id="dialog" class="dialog">
     <div class="dialog-content">
       <!--現在の日付から一週間後の日付の表氏-->
       <?php
@@ -92,13 +102,13 @@ $book = $dao->clickBook($_POST["book_id"]);
     }
     //完了ダイアログ
     function openComplete() {
-      
+
       //ポップアップ「完了しました」を出す
       var dialog = document.getElementById("dialog2");
 
-        //book_idを取ってくる
-        const book_id = <?php echo $book["book_id"]; ?>;
-        
+      //book_idを取ってくる
+      const book_id = <?php echo $book["book_id"]; ?>;
+
       // 非同期通信でAjax.phpにuser_idとbook_idを送信
       $.ajax({
 
@@ -107,16 +117,23 @@ $book = $dao->clickBook($_POST["book_id"]);
         data: {
           "processing": "delete", //"貸出処理か返却処理かをAjax.phpで判断するためにprocessing変数を用意
           "book_id": book_id
-          
+
         }
       });
       closeDialog();
       dialog.style.display = "block";
     }
 
-    function editDialog(){
-      //別ページにリダイレクト
-      window.location.href = "Change.php"
+    function editDialog() {
+      //別ページにリダイレクト]
+      let link = "../Change/Change.php";
+      window.location.href = link;
+      let f = document.createElement("form");
+      f.method = 'POST';
+      f.action = link;
+      f.innerHTML = '<input name="book_id" value=' + <?php echo $book["book_id"]; ?> + '>';
+      document.body.append(f);
+      f.submit();
     }
 
     function closeDialog() {

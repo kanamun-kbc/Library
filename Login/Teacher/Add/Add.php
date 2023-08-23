@@ -111,7 +111,7 @@ $affiliation_id = $user->getAffiliationId();
     var affiliation_id = <?php echo json_encode($affiliation_id); ?>;
 
     function openBarCodeWindow() {
-      var BarCodeWindow = window.open('Barcode.html', '_blank', 'width=600,height=400');
+      var BarCodeWindow = window.open('../../../Barcode/Barcode.html', '_blank', 'width=600,height=400');
       BarCodeWindow.onbeforeunload = function () {
         var BarCodeResult = BarCodeWindow.document.getElementById('jan').value;
         var ISBNResultElement = document.getElementsByName('ISBN')[0]; // input要素を取得

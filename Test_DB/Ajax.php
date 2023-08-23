@@ -95,7 +95,21 @@ switch ($process) {
          //削除を実行
          echo $dao->AddBook($book_id,$affiliation_id,$book_name,$author,$publisher,$image,$ISBN);
          break;
+
+         case 'change':
+        //book_idを受け取る
+         $book_id = filter_input(INPUT_POST, 'book_id');
+         $book_name = filter_input(INPUT_POST, 'book_name');
+         $author = filter_input(INPUT_POST, 'author');
+         $publisher = filter_input(INPUT_POST, 'publisher');
+         $ISBN = filter_input(INPUT_POST, 'ISBN');
+         // DAOクラスをインスタンス化
+         $dao = new DAO();
+         //削除を実行
+         echo $dao->ChangeBook($book_id,$book_name,$author,$publisher,$ISBN);
+         break;
 }
+
 
 // このファイルの処理を終了する
 exit;
