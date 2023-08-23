@@ -95,6 +95,8 @@ li {
     left: 15px
 }
 
+
+
 .breadcrumb li {
     display: inline;
     font-size: 25px;
@@ -249,4 +251,18 @@ li {
     bottom: 70px;
     right: 131px;
     cursor: pointer;
+}
+
+.ranking-button {
+    font-size: 20px;
+    width: 120px;
+    height: 60px;
+    float: right;
+    margin: 10px;
+    background: #CDCDC0;
+    color: #000000;
+    border-radius: 60px;
+    position: relative;
+    bottom: 112px;
+    right: 35px;
 }
