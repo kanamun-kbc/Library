@@ -366,7 +366,7 @@ h2 input[type="text"] {
   /* マウスカーソルをポインターにする */
   margin-top: 20px;
   /* 上部の余白 */
-  margin-left: 180px;
+  margin-left: -180px;
   /* 右側の余白 */
   font-size: 22px;
   /* テキストの大きさを変更する */
