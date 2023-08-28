@@ -217,8 +217,8 @@ $lentBooks = $dao->getLentNowBooks($user);
                 Golink(allBooks, qrCodeValue);
             };
         }
-        /*
-                //バーコードを読み込む関数（実装中）
+        
+                //バーコードを読み込む関数
                 function openBarCodeWindow() {
                     //Barcode.htmlを別ウインドウで600×400の大きさで開く
                     var BarCodeWindow = window.open('Barcode.html', '_blank', 'width=600,height=400');
@@ -226,7 +226,7 @@ $lentBooks = $dao->getLentNowBooks($user);
                         //バーコードから読み取った情報をint型に変換してsearchISBN経由でGolink関数へ送る
                         var BarCodeResult = BarCodeWindow.document.getElementById('jan').value;
                         var BarCodeValue = parseInt(BarCodeResult);
-                        const ISBN = <?php echo $book["ISBN"]; ?>;
+                        const ISBN = BarCodeValue;
 
 
                         // 非同期通信でAjax.phpにuser_idとbook_idを送信
@@ -243,7 +243,7 @@ $lentBooks = $dao->getLentNowBooks($user);
                         closeDialog();
                         dialog.style.display = "block";
                      }
-                }*/
+                }
 
 
         // AjaxでAjax.phpにグラフ表示を促す関数。非同期で行う
