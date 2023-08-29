@@ -72,6 +72,7 @@ $lentBooks = $dao->getLentNowBooks($user);
     <!--履歴ボタン-->
     <button id="history-button" class="history-button" onclick="window.location.href='../History/History.php'">履歴</button><br>
     <button id="ranking-button" class="ranking-button" onclick="window.location.href='../Ranking/Ranking.php'">ランキング</button><br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <hr class="custom-hr"><!--横線-->
     <p class="showbook2">全ての本</p>
     <div class="all-image-container"></div>

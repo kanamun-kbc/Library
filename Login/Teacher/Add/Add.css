@@ -346,9 +346,9 @@ h2 input[type="text"] {
 /*はいボタン*/
   {
   position: absolute;
-  top: 270px;
+  top: dialog;
   /* 上からの位置 */
-  left: 500px;
+  left: dialog;
   /* 左からの位置 */
   width: 150px;
   /* ボタンの幅 */
@@ -366,7 +366,7 @@ h2 input[type="text"] {
   /* マウスカーソルをポインターにする */
   margin-top: 20px;
   /* 上部の余白 */
-  margin-right: 10px;
+  margin-left: -180px;
   /* 右側の余白 */
   font-size: 22px;
   /* テキストの大きさを変更する */
@@ -377,9 +377,9 @@ h2 input[type="text"] {
 /*いいえボタン*/
   {
   position: absolute;
-  top: 270px;
+  top: dialog;
   /* 上からの位置 */
-  left: 700px;
+  left: dialog;
   /* 左からの位置 */
   width: 150px;
   /* ボタンの幅 */
@@ -397,7 +397,7 @@ h2 input[type="text"] {
   /* マウスカーソルをポインターにする */
   margin-top: 20px;
   /* 上部の余白 */
-  margin-right: 10px;
+  margin-left: 30px;
   /* 右側の余白 */
   font-size: 22px;
   /* テキストの大きさを変更する */
